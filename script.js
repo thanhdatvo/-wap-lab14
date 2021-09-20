@@ -13,14 +13,14 @@ function loadUserInfo() {
 //   formData = { userId: 1 };
   console.log(JSON.stringify(formData));
   $.ajax({
-    url: `http://jsonplaceholder.typicode.com/users/${formData.userId}`,
+    url: `https://jsonplaceholder.typicode.com/users/${formData.userId}`,
     type: "GET",
     success: loadUserSuccess,
     error: ajaxFailure,
   });
 
   $.ajax({
-    url: `http://jsonplaceholder.typicode.com/posts?userId=${formData.userId}`,
+    url: `https://jsonplaceholder.typicode.com/posts?userId=${formData.userId}`,
     type: "GET",
     success: loadPostsSuccess,
     error: ajaxFailure,
@@ -72,7 +72,7 @@ function loadCommentsForPost(postId) {
   console.log("postId" + postId);
 
   $.ajax({
-    url: `http://jsonplaceholder.typicode.com/posts/${postId}/comments`,
+    url: `https://jsonplaceholder.typicode.com/posts/${postId}/comments`,
     type: "GET",
     success: (data) => loadCommentsForPostSuccess(postId, data),
     error: ajaxFailure,
